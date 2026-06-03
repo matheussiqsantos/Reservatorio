@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Reservatório</title>
+</head>
+<body>
+    <div class="industrial-background"></div>
+
+    <main class="monitor-card" id="monitor-panel">
+        
+        <div id="critical-alert" class="alert-banner hidden">
+        </div>
+
+        <header class="card-header">
+            <h1 class="card-title">MONITORAMENTO DE TANQUE</h1>
+        </header>
+
+        <div class="volume-display">
+            Volume Atual: <span id="current-volume">0</span> <span class="unit">L</span>
+        </div>
+
+        <div class="tank-container">
+            <div class="tank-gauge">
+                <div id="tank-fill" class="tank-fill" style="width: 0%;"></div>
+            </div>
+            <div class="tank-scale">
+                <span>0L</span>
+                <span>500L</span>
+                <span>1000L</span>
+            </div>
+        </div>
+
+        <div class="control-actions">
+            <button id="btn-add" class="btn btn-add">Adicionar 200L</button>
+            <button id="btn-reset" class="btn btn-reset">Esvaziar (Limpeza)</button>
+        </div>
+
+    </main>
+</body>
+</html>

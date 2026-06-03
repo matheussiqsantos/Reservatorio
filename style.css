@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #1e293b;
+}
+
+
+.industrial-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/industria-img.avif') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(4px) brightness(0.6);
+    z-index: 1;
+}
+
+.monitor-card {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(241, 245, 249, 0.95);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    padding: 35px;
+    box-shadow: 0 20px 40px rgba(118, 93, 93, 0.5), 
+                8px 8px 0px rgba(15, 23, 42, 0.8);
+    text-align: center;
+    border: 1px solid rgba(160, 143, 143, 0.5);
+    transition: all 0.5s ease;
+}
+
+.card-title {
+    color: #223e64; 
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+.volume-display {
+    color: #2563eb; 
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.volume-display .unit {
+    font-size: 2rem;
+}
+
+.tank-container {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.tank-gauge {
+    width: 100%;
+    height: 32px;
+    background-color: #cbd5e1; 
+    border-radius: 50px; 
+    overflow: hidden;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.tank-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8); 
+    border-radius: 50px 0 0 50px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+
+.tank-scale {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px 0 10px;
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.control-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-add {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #059669;
+    box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-reset {
+    background-color: #94a3b8;
+    color: white;
+}
+
+.btn-reset:hover {
+    background-color: #64748b;
+    box-shadow: 0 6px 12px rgba(100, 116, 139, 0.3);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.alert-banner {
+    background-color: #ef4444;
+    color: white;
+    padding: 30px;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    animation: blink 1s infinite alternate;
+}
+
+.panel-critical {
+    border: 3px solid #ef4444;
+    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.3), 8px 8px 0px rgba(15, 23, 42, 0.8);
+}
+
+.tank-critical {
+    background: linear-gradient(90deg, #ef4444, #b91c1c) !important;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+@media (max-width: 480px) {
+    .control-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
